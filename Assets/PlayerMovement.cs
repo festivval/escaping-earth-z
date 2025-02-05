@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    public Vector2 pos;
     private Vector2 movement;
     private Rigidbody2D rb;
 
@@ -10,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // Cache the Rigidbody2D component
         rb = GetComponent<Rigidbody2D>();
+        pos = transform.position;
     }
 
     void Update()
@@ -17,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
         // Input handling
         movement.x = Input.GetAxisRaw("Horizontal"); // A/D or Left/Right Arrow
         movement.y = Input.GetAxisRaw("Vertical");   // W/S or Up/Down Arrow
+        pos = transform.position;
     }
 
     void FixedUpdate()
