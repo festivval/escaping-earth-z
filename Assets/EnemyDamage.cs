@@ -3,21 +3,28 @@ using UnityEngine;
 public class EnemyDamage : MonoBehaviour
 {
     public PlayerHealth playerHealth;
+    private bool damage;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerHealth = GameObject.Find("pumpkin_0").GetComponent<PlayerHealth>();
+        damage = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(damage)
+            playerHealth.hurt();
     }
 
     private void OnCollisionEnter2D(Collision2D c) {
         if(c.gameObject.tag == "Player")
-	    playerHealth.hurt();
+	    damage = true;
+    }
+     private void OnCollisionExit2D(Collision2D c) {
+        if(c.gameObject.tag == "Player")
+	    damage = false;
     }
 }
