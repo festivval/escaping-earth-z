@@ -5,25 +5,33 @@ public class ResourceSpawner : MonoBehaviour
     public GameObject prefab;
     public float minSpawnTime = 3.0f;
     public float maxSpawnTime = 7.0f;
-    private int numResources;
+    private int numActive;
     private float timer;
+
+    private ResourceDisplay rd;
+    private int numCollected;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        numResources = 0;
+        numActive = 0;
+        numCollected = 0;
         timer = minSpawnTime;
+        rd = GameObject.FindWithTag("ResourceText").GetComponent<ResourceDisplay>();
+        rd.updateText(numCollected);
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
-        if(timer <= 0 && numResources < 3) {
-            GameObject temp = Instantiate(prefab, new Vector2(randX(),randY()), Quaternion.identity);
-            temp.SetActive(true);
-            numResources++;
-            timer = Random.Range(minSpawnTime, maxSpawnTime);
+        if(numActive < 3) {
+            timer -= Time.deltaTime;
+            if(timer <= 0) {
+                GameObject temp = Instantiate(prefab, new Vector2(randX(),randY()), Quaternion.identity);
+                temp.SetActive(true);
+                numActive++;
+                timer = Random.Range(minSpawnTime, maxSpawnTime);
+            }
         }
     }
 
@@ -37,6 +45,9 @@ public class ResourceSpawner : MonoBehaviour
     }
 
     public void remove() {
-        numResources--;
+        numActive--;
+        numCollected++;
+        rd.updateText(numCollected);
+
     }
 }

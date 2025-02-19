@@ -3,7 +3,7 @@ using UnityEngine;
 public class Resource : MonoBehaviour
 {
     private float time = 3.0f;
-    public bool collecting;
+    private bool collecting;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
