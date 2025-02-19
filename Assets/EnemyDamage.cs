@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    public PlayerHealth playerHealth;
+    private PlayerHealth playerHealth;
     private bool damage;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,7 +23,7 @@ public class EnemyDamage : MonoBehaviour
         if(c.gameObject.tag == "Player")
 	    damage = true;
     }
-     private void OnCollisionExit2D(Collision2D c) {
+    private void OnCollisionExit2D(Collision2D c) {
         if(c.gameObject.tag == "Player")
 	    damage = false;
     }

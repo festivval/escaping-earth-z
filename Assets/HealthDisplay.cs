@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class HealthDisplay : MonoBehaviour
 {
-    Text healthText;
+    private Text healthText;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,6 +19,6 @@ public class HealthDisplay : MonoBehaviour
 
     // called when player takes damage
     public void updateHealth(int health) {
-        healthText.text = health.ToString();
+        healthText.text = ("Health: " + health.ToString());
     }
 }

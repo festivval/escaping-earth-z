@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    float moveSpeed = 2f;
-    public PlayerMovement player;
-    Rigidbody2D rb;
+    public float moveSpeed = 2f;
+    private PlayerMovement player;
+    private Rigidbody2D rb;
 
     void Start() {
         rb = GetComponent<Rigidbody2D>();

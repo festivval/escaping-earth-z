@@ -5,8 +5,8 @@ public class PlayerHealth : MonoBehaviour
     public int health;
     public int max = 10;
     public float iFrames = 0.4f;
-    public float iFramesTimer;
-    public HealthDisplay hd;
+    private float iFramesTimer;
+    private HealthDisplay hd;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
