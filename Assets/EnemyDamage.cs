@@ -8,7 +8,7 @@ public class EnemyDamage : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        playerHealth = GameObject.Find("pumpkin_0").GetComponent<PlayerHealth>();
+        playerHealth = GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();
         damage = false;
     }
 

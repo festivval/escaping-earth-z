@@ -4,14 +4,17 @@ public class PlayerHealth : MonoBehaviour
 {
     public int health;
     public int max = 10;
-    public float iFrames = 0.2f;
+    public float iFrames = 0.4f;
     public float iFramesTimer;
+    public HealthDisplay hd;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         health = max;
         iFramesTimer = 0;
+        hd = GameObject.FindWithTag("Text").GetComponent<HealthDisplay>();
+	hd.updateHealth(health);
     }
 
     // Update is called once per frame
@@ -25,8 +28,11 @@ public class PlayerHealth : MonoBehaviour
         if(iFramesTimer <= 0) {
            iFramesTimer = iFrames;
            health--;
+           hd.updateHealth(health);
         }
-        if(health <= 0)
+        if(health <= 0) {
             Destroy(gameObject);
+            hd.updateHealth(0);
+        }
     }
 }
