@@ -31,8 +31,9 @@ public class PlayerHealth : MonoBehaviour
            hd.updateHealth(health);
         }
         if(health <= 0) {
-            Destroy(gameObject);
             hd.updateHealth(0);
+            GameObject.FindWithTag("EndScreen").GetComponent<EndScreen>().show();
+            Destroy(gameObject);
         }
     }
 }

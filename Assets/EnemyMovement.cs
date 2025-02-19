@@ -14,6 +14,5 @@ public class EnemyMovement : MonoBehaviour
     void FixedUpdate() {
         Vector2 myPos = new Vector2(transform.position.x, transform.position.y);
         rb.linearVelocity = (player.pos - myPos).normalized * moveSpeed;
-	Debug.Log("wow");
     }
 }
