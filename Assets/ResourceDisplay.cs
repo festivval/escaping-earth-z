@@ -3,12 +3,13 @@ using UnityEngine.UI;
 
 public class ResourceDisplay : MonoBehaviour
 {
-    private Text text;
+    private Text collected;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        text = gameObject.GetComponent<Text>();
+        collected = gameObject.GetComponent<Text>();
+        updateText(0);
     }
 
     // Update is called once per frame
@@ -19,6 +20,6 @@ public class ResourceDisplay : MonoBehaviour
 
     // called when player collects a resource
     public void updateText(int numCollected) {
-        text.text = ("Resources: " + numCollected.ToString());
+        collected.text = ("Resources: " + numCollected.ToString());
     }
 }

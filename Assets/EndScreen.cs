@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EndScreen : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class EndScreen : MonoBehaviour
 
     public void show() {
         gameObject.GetComponent<Canvas>().enabled = true;
-        Debug.Log("sadge");
+        GetComponentInChildren<Text>().text = "Game Over!\nScore: " + (GameObject.FindWithTag("ResourceSpawner").GetComponent<ResourceSpawner>().numCollected);
+;
+        Time.timeScale = 0;
     }
 }
