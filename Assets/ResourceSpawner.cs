@@ -18,7 +18,6 @@ public class ResourceSpawner : MonoBehaviour
         numCollected = 0;
         timer = minSpawnTime;
         rd = GameObject.FindWithTag("ResourceText").GetComponent<ResourceDisplay>();
-        rd.updateText(numCollected);
     }
 
     // Update is called once per frame
