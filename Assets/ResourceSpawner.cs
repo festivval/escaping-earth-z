@@ -9,7 +9,7 @@ public class ResourceSpawner : MonoBehaviour
     private float timer;
 
     private ResourceDisplay rd;
-    private int numCollected;
+    public int numCollected;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
