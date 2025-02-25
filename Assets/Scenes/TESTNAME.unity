@@ -243,6 +243,7 @@ MonoBehaviour:
   prefab: {fileID: 473062541}
   minSpawnTime: 3
   maxSpawnTime: 5
+  numCollected: 0
 --- !u!4 &224187949
 Transform:
   m_ObjectHideFlags: 0
@@ -1126,6 +1127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2114171650}
+  minSpawnTime: 5
+  maxSpawnTime: 15
 --- !u!1 &1847845267
 GameObject:
   m_ObjectHideFlags: 0
@@ -1443,7 +1446,7 @@ GameObject:
   - component: {fileID: 2114171656}
   - component: {fileID: 2114171657}
   m_Layer: 0
-  m_Name: New Piskel (7)_0
+  m_Name: Zombie
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1459,7 +1462,7 @@ Animator:
   m_GameObject: {fileID: 2114171650}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5c8c4e6037d8e2c4f85f08e7ac35f725, type: 2}
+  m_Controller: {fileID: 9100000, guid: b2c53ae1defe3d147b3ed4ed84e50dda, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1515,7 +1518,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1926812615, guid: 76f260c7aa85a864f9f3fe79ab56478f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 89ea55f7a66d98344bcac4834f4ef8c2, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
