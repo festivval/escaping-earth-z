@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float projectileSpeed = 5.0f;
-    public float expirationTime = 50;
+    public float expirationTime = 5.0f;
+
     public Rigidbody2D rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -14,14 +14,10 @@ public class Projectile : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
+        rb.linearVelocity = transform.right * 20;
+
         expirationTime -= Time.deltaTime;
         if(expirationTime <= 0)
             Destroy(gameObject);
-    }
-
-    void FixedUpdate()
-    {
-        rb.MovePosition(transform.position + transform.forward * Time.fixedDeltaTime * projectileSpeed);
-        
     }
 }
