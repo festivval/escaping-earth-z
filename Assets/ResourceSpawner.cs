@@ -8,7 +8,7 @@ public class ResourceSpawner : MonoBehaviour
     private int numActive;
     private float timer;
 
-    private ResourceDisplay rd;
+    public Display rd;
     public int numCollected;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -17,7 +17,7 @@ public class ResourceSpawner : MonoBehaviour
         numActive = 0;
         numCollected = 0;
         timer = minSpawnTime;
-        rd = GameObject.FindWithTag("ResourceText").GetComponent<ResourceDisplay>();
+        rd.update(0);
     }
 
     // Update is called once per frame
@@ -46,7 +46,7 @@ public class ResourceSpawner : MonoBehaviour
     public void remove() {
         numActive--;
         numCollected++;
-        rd.updateText(numCollected);
+        rd.update(numCollected);
 
     }
 }

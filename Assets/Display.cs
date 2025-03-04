@@ -1,14 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthDisplay : MonoBehaviour
+public class Display : MonoBehaviour
 {
-    private Text healthText;
+    private Text text;
+    public string displayWords;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        healthText = gameObject.GetComponent<Text>();
+        text = gameObject.GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -18,7 +19,7 @@ public class HealthDisplay : MonoBehaviour
     }
 
     // called when player takes damage
-    public void updateHealth(int health) {
-        healthText.text = ("Health: " + health.ToString());
+    public void update(int amount) {
+        text.text = (displayWords + amount.ToString());
     }
 }

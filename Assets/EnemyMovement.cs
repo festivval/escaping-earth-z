@@ -3,12 +3,10 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public float moveSpeed = 2f;
-    private PlayerMovement player;
-    private Rigidbody2D rb;
+    public PlayerMovement player;
+    public Rigidbody2D rb;
 
     void Start() {
-        rb = GetComponent<Rigidbody2D>();
-        player = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
     }
 
     void FixedUpdate() {

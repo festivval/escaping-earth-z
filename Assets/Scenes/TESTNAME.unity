@@ -243,6 +243,7 @@ MonoBehaviour:
   prefab: {fileID: 473062541}
   minSpawnTime: 3
   maxSpawnTime: 5
+  rd: {fileID: 0}
   numCollected: 0
 --- !u!4 &224187949
 Transform:
@@ -558,6 +559,7 @@ MonoBehaviour:
   health: 0
   max: 10
   iFrames: 0.2
+  hd: {fileID: 1847845271}
 --- !u!1 &473062541
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,9 +1005,9 @@ GameObject:
   - component: {fileID: 1509161621}
   - component: {fileID: 1509161624}
   - component: {fileID: 1509161623}
-  - component: {fileID: 1509161622}
+  - component: {fileID: 1509161625}
   m_Layer: 5
-  m_Name: Collected
+  m_Name: ResourceDisplay
   m_TagString: ResourceText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1030,18 +1032,6 @@ RectTransform:
   m_AnchoredPosition: {x: 300, y: 130}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1509161622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1509161620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6afbc6a67d3a754f9ae2e6c7ee70106, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1509161623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1084,6 +1074,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1509161620}
   m_CullTransparentMesh: 1
+--- !u!114 &1509161625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509161620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2af2b206d3b21dc47b3010d90c5c0a44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayWords: 'Resources: '
 --- !u!1 &1692138945
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,8 +1162,8 @@ Transform:
   m_GameObject: {fileID: 1821740751}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.25, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 1.2, z: 0.8}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.62, y: 0.42, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 374810805}
@@ -1293,7 +1296,7 @@ GameObject:
   - component: {fileID: 1847845269}
   - component: {fileID: 1847845271}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: HealthDisplay
   m_TagString: Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1372,6 +1375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2af2b206d3b21dc47b3010d90c5c0a44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  displayWords: 'Health: '
 --- !u!1 &1919052128
 GameObject:
   m_ObjectHideFlags: 0
@@ -1735,6 +1739,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
+  player: {fileID: 374810806}
+  rb: {fileID: 2114171654}
 --- !u!114 &2114171656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1747,6 +1753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4052896c8a0f77f41a6fac7f804361b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHealth: {fileID: 374810809}
 --- !u!61 &2114171657
 BoxCollider2D:
   m_ObjectHideFlags: 0
