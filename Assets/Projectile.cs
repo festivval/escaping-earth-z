@@ -14,10 +14,20 @@ public class Projectile : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        rb.linearVelocity = transform.right * 20;
+        rb.linearVelocity = transform.right * 12;
 
         expirationTime -= Time.deltaTime;
         if(expirationTime <= 0)
+            Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.tag == "Enemy") {
+            other.gameObject.GetComponent<EnemyMovement>().hurt();
+            Destroy(gameObject);
+        }
+        if(other.gameObject.tag == "Wall")
             Destroy(gameObject);
     }
 }

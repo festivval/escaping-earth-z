@@ -10,7 +10,7 @@ public class PlayerAttack : MonoBehaviour
     public PlayerMovement pm;
     public GameObject prefab;
 
-    public float cooldown = 0.5f;
+    public static float cooldown = 0.35f;
     private float cooldownTimer = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,7 +23,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if(cooldownTimer > 0)
             cooldownTimer -= Time.deltaTime;
-
+        
         if(Input.GetKeyDown("space") && cooldownTimer <= 0) {
             cooldownTimer = cooldown;
             GameObject temp = Instantiate(prefab, transform.position, transform.rotation);

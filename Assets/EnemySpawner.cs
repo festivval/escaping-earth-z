@@ -11,6 +11,10 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         timer = minSpawnTime;
+        GameObject temp = Instantiate(prefab, new Vector2(randX(),randY()), Quaternion.identity);
+        temp.SetActive(true);
+        GameObject temp2 = Instantiate(prefab, new Vector2(randX(),randY()), Quaternion.identity);
+        temp2.SetActive(true);
     }
 
     // Update is called once per frame

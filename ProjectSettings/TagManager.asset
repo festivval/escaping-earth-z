@@ -9,6 +9,7 @@ TagManager:
   - EndScreen
   - ResourceSpawner
   - ResourceText
+  - Wall
   layers:
   - Default
   - TransparentFX

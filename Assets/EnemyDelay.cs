@@ -16,7 +16,8 @@ public class EnemyDelay : MonoBehaviour
     {
         delay -= Time.deltaTime;
         if(delay <= 0) {
-            Instantiate(prefab, transform.position, Quaternion.identity);
+            GameObject temp = Instantiate(prefab, transform.position, Quaternion.identity);
+            temp.SetActive(true);
             Destroy(gameObject);
         }
     }
