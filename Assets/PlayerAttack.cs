@@ -10,7 +10,7 @@ public class PlayerAttack : MonoBehaviour
     public PlayerMovement pm;
     public GameObject prefab;
 
-    public static float cooldown = 0.35f;
+    public static float cooldown = 0.2f;
     private float cooldownTimer = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
