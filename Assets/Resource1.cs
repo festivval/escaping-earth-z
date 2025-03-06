@@ -1,21 +1,16 @@
 using UnityEngine;
 
-public class Resource : MonoBehaviour
+public class Resource1 : MonoBehaviour
 {
-    private Color clear = new Color(255,255,255,0);
-
-    private SpriteRenderer sr;
 
     public float startTime = 1.5f;
     private float time;
     private bool collecting;
 
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         collecting = false;
-        sr = GetComponent<SpriteRenderer>();
         time = startTime;
     }
 
@@ -24,10 +19,7 @@ public class Resource : MonoBehaviour
     {
         if(collecting)
             time -= Time.deltaTime;
-            // taken from here: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Color.Lerp.html
-            sr.color = Color.Lerp(clear, Color.white, Mathf.PingPong((startTime-time)/startTime, 1));
         if(time <= 0) {
-            GameObject.FindWithTag("ResourceSpawner").GetComponent<ResourceSpawner>().remove();
             Destroy(gameObject);
         }
     }

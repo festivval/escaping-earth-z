@@ -10,6 +10,7 @@ TagManager:
   - ResourceSpawner
   - ResourceText
   - Wall
+  - NightTimer
   layers:
   - Default
   - TransparentFX

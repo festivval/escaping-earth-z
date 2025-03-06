@@ -4,7 +4,7 @@ public class EnemyMovement : MonoBehaviour
 {
     public float maxSpeed = 10f;
     //public float minSpeed = -1f;
-    private float acceleration = 2f;
+    private float acceleration = 1.5f;
     public PlayerMovement player;
     public Rigidbody2D rb;
     Vector2 myPos;
@@ -12,6 +12,8 @@ public class EnemyMovement : MonoBehaviour
     private EnemyHealthBar healthBar;
     public int maxHealth = 10;
     public int health;
+
+    public DayNightCycle daynight;
 
     void Start() {
         myPos = new Vector2(0,0);
@@ -26,6 +28,10 @@ public class EnemyMovement : MonoBehaviour
         rb.AddForce((player.pos - myPos).normalized * acceleration);
         if(rb.linearVelocity.magnitude > maxSpeed)
             rb.linearVelocity = (player.pos - myPos).normalized * acceleration;
+
+        if(daynight.danger) {
+            acceleration = 3f;
+        }
     }
 
     public void hurt() {
