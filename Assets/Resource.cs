@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Resource : MonoBehaviour
 {
-    private Color clear = new Color(255,255,255,0);
 
     private SpriteRenderer sr;
 
@@ -22,10 +21,11 @@ public class Resource : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(collecting)
+        if(collecting) {
             time -= Time.deltaTime;
             // taken from here: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Color.Lerp.html
-            sr.color = Color.Lerp(clear, Color.white, Mathf.PingPong((startTime-time)/startTime, 1));
+            sr.color = Color.Lerp(Color.white, Color.black, Mathf.PingPong((startTime-time)/startTime, 1));
+        }
         if(time <= 0) {
             GameObject.FindWithTag("ResourceSpawner").GetComponent<ResourceSpawner>().remove();
             Destroy(gameObject);
