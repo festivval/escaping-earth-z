@@ -9,10 +9,14 @@ public class EnemyMovement : MonoBehaviour
     public Rigidbody2D rb;
     Vector2 myPos;
 
-    public int health = 10;
+    private EnemyHealthBar healthBar;
+    public int maxHealth = 10;
+    public int health;
 
     void Start() {
         myPos = new Vector2(0,0);
+        health = maxHealth;
+        healthBar = GetComponentInChildren<EnemyHealthBar>();
     }
 
     void FixedUpdate() {
@@ -26,6 +30,7 @@ public class EnemyMovement : MonoBehaviour
 
     public void hurt() {
         health--;
+        healthBar.updateHealth(1.0f*health/maxHealth);
         rb.linearVelocity = -(player.pos - myPos).normalized * acceleration * 0.5f;
         if(health <= 0)
             Destroy(gameObject);
